@@ -1,2 +1,1 @@
-# First-interaction
-Github Action for first-time contributors
+# Github Actions
