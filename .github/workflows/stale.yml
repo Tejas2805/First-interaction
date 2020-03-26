@@ -3,7 +3,7 @@ name: Close Stale Pull Requests
 on:
   schedule:
     #Runs at 00:00 every day
-  - cron: '* * * * *'
+  - cron: '0 0 0 * *'
 
 jobs:
   stale:
