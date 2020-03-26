@@ -3,7 +3,7 @@ name: Close Stale Pull Requests
 on:
   schedule:
     #Runs at 00:00 every day
-  - cron: "0 0 * * *"
+  - cron: '* * * * *'
 
 jobs:
   stale:
@@ -11,9 +11,9 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-     - uses: actions/checkout@master
+     - uses: actions/checkout@v2.0.0
      - name: stale
-       uses: gatsbyjs/stale@master
+       uses: gatsbyjs/stale@v1.1.0
        with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           DAYS_BEFORE_STALE: 0
