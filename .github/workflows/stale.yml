@@ -3,7 +3,7 @@ name: Close Stale Pull Requests
 on:
   schedule:
     #Runs at 00:00 every day
-  - cron: '0 0 0 * *'
+  - cron: '* * * * *'
 
 jobs:
   stale:
@@ -11,15 +11,13 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-     - uses: actions/checkout@v2.0.0
-     - name: stale
-       uses: gatsbyjs/stale@v1.1.0
+     - uses: actions/stale@v1.1.0
        with:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          DAYS_BEFORE_STALE: 0
-          DAYS_BEFORE_CLOSE: 1
-          STALE_ISSUE_LABEL: 'stale'
-          STALE_ISSUE_MESSAGE: Lets close this.
-          STALE_PR_LABEL: 'stale'
-          STALE_PR_MESSAGE: 'Hi, were are going to mark this PR as stale because it has been inactive for the past 30 days. If no further activity occurs within the following 7 days, it will be automatically closed so that others can take up the issue.If you are still working on this PR, please make a follow-up commit within 7 days and leave a comment to remove the stale label. Do let us know if you are stuck so that we can help you!'
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
+          days-before-stale: 0
+          days-before-close: 0
+          stale-issue-label: 'stale'
+          stale-issue-message: Lets close this.
+          stale-pr-label: 'stale'
+          stale-pr-message: 'Hi, were are going to mark this PR as stale because it has been inactive for the past 30 days. If no further activity occurs within the following 7 days, it will be automatically closed so that others can take up the issue.If you are still working on this PR, please make a follow-up commit within 7 days and leave a comment to remove the stale label. Do let us know if you are stuck so that we can help you!'
             
