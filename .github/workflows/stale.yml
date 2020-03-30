@@ -3,7 +3,7 @@ name: Close Stale Pull Requests
 on:
   schedule:
     #Runs at 00:00 every day
-  - cron: '0 0 * * *'
+  - cron: '* * * * *'
 
 jobs:
   stale:
@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-     - uses: Tejas2805/stale@master
+     - uses: actions/stale@v1.1.0
        with:
           repo-token: ${{ secrets.GITHUB_TOKEN }}
           days-before-stale: 0
