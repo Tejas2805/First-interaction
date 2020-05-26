@@ -3,7 +3,7 @@ name: Close Stale Pull Requests
 on:
   schedule:
     # Runs at 00:00 every day
-    - cron: '0 0 * * *'
+    - cron: '* * * * *'
 
 jobs:
   stale:
@@ -13,8 +13,8 @@ jobs:
      - uses: actions/stale@v3.0.3
        with:
           repo-token: ${{ secrets.GITHUB_TOKEN }}
-          days-before-stale: 30
-          days-before-close: 7
+          days-before-stale: 0
+          days-before-close: 1
           stale-pr-label: 'Stale'
           stale-pr-message: |
             Hi,
