@@ -15,6 +15,7 @@ jobs:
           repo-token: ${{ secrets.GITHUB_TOKEN }}
           days-before-stale: 0
           days-before-close: 1
+          exempt-pr-labels: 'bug'
           remove-stale-when-updated: 'True'
           stale-pr-label: 'Stale'
           stale-pr-message: |
